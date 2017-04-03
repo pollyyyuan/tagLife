@@ -1,9 +1,11 @@
 package me.yuanye.taglife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class TargetManagerActivity extends AppCompatActivity {
 
@@ -16,6 +18,20 @@ public class TargetManagerActivity extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.target_manager_toolbar);
         toolbar.setTitle("目标");
         setSupportActionBar(toolbar);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.target_manager_add:
+                        Intent intent = new Intent();
+                        intent.setClass(TargetManagerActivity.this, TargetManagerAddActivity.class);
+                        startActivity(intent);
+                        return true;
+                    default:
+                        return true;
+                }
+            }
+        });
     }
 
     @Override

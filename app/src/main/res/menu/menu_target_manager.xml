@@ -4,7 +4,7 @@
     tools:context="me.yuanye.taglife.TargetManagerActivity">
 
     <item
-        android:id="@+id/target_manager"
+        android:id="@+id/target_manager_add"
         android:orderInCategory="100"
         android:title="添加"
         app:showAsAction="always" />
