@@ -3,8 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="me.yuanye.taglife.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/target_manager"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="目标管理"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/plan_manager"
+        android:orderInCategory="100"
+        android:title="计划管理"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/habit_manager"
+        android:orderInCategory="100"
+        android:title="习惯管理"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/data_statistics"
+        android:orderInCategory="100"
+        android:title="数据统计"
+        app:showAsAction="never" />
+
 </menu>
