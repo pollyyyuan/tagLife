@@ -33,16 +33,35 @@ public class TargetManagerAddActivity extends AppCompatActivity {
 
     private EditText goalPlan;
 
+    private Calendar finishDateCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.target_manager_add_activity);
         initGoalView();
+        final GoalDao dao = new GoalDao(this);
+
+        DateFormat dateFormat = SimpleDateFormat.getDateInstance();
+        final Date makeDate = new Date();
+        makeDateTextView.setText(dateFormat.format(makeDate));
         createGoalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String goalName = goalNameEdit.getText().toString();
+                java.sql.Date makeDateSql = new java.sql.Date(makeDate.getTime());
+                java.sql.Date finishDateSql = new java.sql.Date(finishDateCalendar
+                        .getTime().getTime());
+                String content = goalContent.getText().toString();
+                String plan = goalPlan.getText().toString();
 
+                GoalModel goalModel = new GoalModel();
+                goalModel.setName(goalName);
+                goalModel.setMakeTime(makeDateSql);
+                goalModel.setFinishTime(finishDateSql);
+                goalModel.setContent(content);
+                goalModel.setPlan(plan);
+                dao.save(goalModel);
             }
         });
 
@@ -61,16 +80,18 @@ public class TargetManagerAddActivity extends AppCompatActivity {
                             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                                 Log.d("日期选择", i + " " + i1 + "  " + i2);
                                 finishDateEdit.setText(i + "-" + (i1 + 1) + "-" + i2);
+                                finishDateCalendar = Calendar.getInstance();
+                                finishDateCalendar.set(Calendar.YEAR, i);
+                                finishDateCalendar.set(Calendar.MONTH, i1 + 1);
+                                finishDateCalendar.set(Calendar.DAY_OF_MONTH, i2);
                             }
                         }, year, month, day);
                 datePickerDialog.show();
-
             }
         });
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        makeDateTextView.setText(dateFormat.format(new Date()));
     }
+
+
 
     private void initGoalView() {
         goalNameEdit = (EditText) findViewById(R.id.goal_name_edit);
