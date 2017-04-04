@@ -1,0 +1,8 @@
+<resources>
+    <!-- 目标管理 -->
+    <string name="add_target">添加</string>
+    <string name="data_statistics">数据统计</string>
+    <string name="habit_manager">习惯管理</string>
+    <string name="plan_manager">计划管理</string>
+    <string name="target_manager">目标管理</string>
+</resources>

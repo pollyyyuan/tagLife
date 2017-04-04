@@ -5,25 +5,25 @@
     <item
         android:id="@+id/target_manager"
         android:orderInCategory="100"
-        android:title="目标管理"
+        android:title="@string/target_manager"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/plan_manager"
         android:orderInCategory="100"
-        android:title="计划管理"
+        android:title="@string/plan_manager"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/habit_manager"
         android:orderInCategory="100"
-        android:title="习惯管理"
+        android:title="@string/habit_manager"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/data_statistics"
         android:orderInCategory="100"
-        android:title="数据统计"
+        android:title="@string/data_statistics"
         app:showAsAction="never" />
 
 </menu>

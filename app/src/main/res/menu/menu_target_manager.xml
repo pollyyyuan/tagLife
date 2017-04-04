@@ -1,12 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="me.yuanye.taglife.TargetManagerActivity">
+    tools:context="me.yuanye.taglife.target.TargetManagerActivity">
 
     <item
         android:id="@+id/target_manager_add"
         android:orderInCategory="100"
-        android:title="添加"
+        android:title="@string/add_target"
         app:showAsAction="always" />
 
 </menu>
