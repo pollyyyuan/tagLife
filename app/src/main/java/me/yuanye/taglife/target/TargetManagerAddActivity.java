@@ -21,6 +21,8 @@ import me.yuanye.taglife.R;
 
 public class TargetManagerAddActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+
     private Button createGoalButton;
 
     private EditText goalNameEdit;
@@ -39,6 +41,8 @@ public class TargetManagerAddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.target_manager_add_activity);
+        toolbar = (Toolbar)findViewById(R.id.target_add_toolbar);
+        toolbar.setTitle("新增目标");
         initGoalView();
         final GoalDao dao = new GoalDao(this);
 

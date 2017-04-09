@@ -9,7 +9,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:titleTextColor="@android:color/white"
-         >
+        >
 
     </android.support.v7.widget.Toolbar>
 
@@ -22,10 +22,10 @@
             style="@style/textTitle"
             android:text="目标名称" />
 
-        <EditText
+        <TextView
             style="@style/textContent"
             android:id="@+id/goal_name_edit"
-            android:text="请输入目标名称" />
+            android:text="目标一" />
     </LinearLayout>
 
     <LinearLayout
@@ -37,10 +37,10 @@
             style="@style/textTitle"
             android:text="完成时间" />
 
-        <EditText
+        <TextView
             style="@style/textContent"
             android:id="@+id/finish_date_edit"
-            android:text="请输入完成时间" />
+            android:text="2017-3-26" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,9 +65,10 @@
             style="@style/textTitle"
             android:text="目标内容"/>
 
-        <EditText
+        <TextView
             android:id="@+id/goal_content"
-            style="@style/textContent"/>
+            style="@style/textContent"
+            android:text="我是目标内容"/>
     </LinearLayout>
 
     <LinearLayout
@@ -78,10 +79,10 @@
             style="@style/textTitle"
             android:text="计划安排"/>
 
-        <EditText
+        <TextView
             android:id="@+id/goal_plan"
             style="@style/textContent"
-            android:text="单行输入" />
+            android:text="我是计划安排" />
     </LinearLayout>
 
     <LinearLayout
@@ -92,16 +93,31 @@
             style="@style/textTitle"
             android:text="计划周期"/>
 
-        <EditText
+        <TextView
             style="@style/textContent"
             android:text="天" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/create_goal"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/btn"
-        android:text="创建目标"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/update_goal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/btn"
+            android:text="修改目标"/>
+
+        <Button
+            android:id="@+id/finish_goal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/btn"
+            android:text="完成目标"/>
+    </LinearLayout>
+
 
 </LinearLayout>
